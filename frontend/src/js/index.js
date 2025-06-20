@@ -1,12 +1,20 @@
 document.getElementById("login-form").addEventListener("submit", function(event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const usuario = document.getElementById("username").value;
   const senha = document.getElementById("password").value;
 
-  if (usuario === "admin" && senha === "admin") {
+  const usuarios = [
+    { usuario: "admin", senha: "admin" },
+    { usuario: "artur", senha: "artu123" },
+    { usuario: "daniel", senha: "daniel123" },
+  ];
+
+  const usuarioValido = usuarios.find(u => u.usuario === usuario && u.senha === senha);
+
+  if (usuarioValido) {
     alert("Login bem-sucedido!");
-    window.location.href = "home.html"; 
+    window.location.href = "home.html";
   } else {
     alert("Usuário ou senha incorretos. Tente novamente.");
   }
