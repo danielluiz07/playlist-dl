@@ -1,16 +1,16 @@
-document.getElementById("login-btn").addEventListener("click", () => {
+document.getElementById("login-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const usuario = document.getElementById("username").value;
   const senha = document.getElementById("password").value;
 
   if (usuario === "admin" && senha === "admin") {
     alert("Login bem-sucedido!");
-    // Redireciona após o alerta
-    window.location.href = "/frontend/src/pages/home.html";
+    window.location.href = "./home.html";
   } else {
     alert("Usuário ou senha incorretos. Tente novamente.");
   }
 });
+
 
 
 
