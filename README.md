@@ -1,6 +1,6 @@
 # 💻 Daniel Luiz | Developer/Student Front-End/Full-Stack
 
-![preview](src/img/preview-site.png)
+![preview](frontend/src/img/preview-site.png)
 
 Este é um projeto de página pessoal com animações em canvas, destinado para eu, com controle de música, play list escolhida, autamente pensado e desenvolvido utilizando **HTML**, **CSS** e **JavaScript**.
 
