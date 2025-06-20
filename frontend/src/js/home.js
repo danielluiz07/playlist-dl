@@ -44,59 +44,74 @@ pauseBtn.addEventListener("click", () => {
   audioPlayer.pause();
 });
 
+
 // --- Animação de fundo ---
-const canvas = document.getElementById("background");
-const ctx = canvas.getContext("2d");
+const canvas = document.getElementById('background');
+const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const particles = [];
-const numParticles = 150;
+let particles = [];
 
-for (let i = 0; i < numParticles; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        d: Math.random() * numParticles,
-    });
-}
+class Particle {
+  constructor(x, y, size, speedX, speedY) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.speedX = speedX;
+    this.speedY = speedY;
+    this.opacity = Math.random();
+  }
 
-let angle = 0;
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
 
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+    // Rebote nas bordas
+    if (this.x + this.size > canvas.width || this.x - this.size < 0)
+      this.speedX *= -1;
+    if (this.y + this.size > canvas.height || this.y - this.size < 0)
+      this.speedY *= -1;
+  }
+
+  draw() {
     ctx.beginPath();
-
-    for (let i = 0; i < numParticles; i++) {
-        const p = particles[i];
-        ctx.moveTo(p.x, p.y);
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-    }
-
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0, 255, 180, ${this.opacity})`;
     ctx.fill();
-    update();
+  }
 }
 
-function update() {
-    angle += 0.01;
-
-    for (let i = 0; i < numParticles; i++) {
-        const p = particles[i];
-        p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
-        p.x += Math.sin(angle) * 2;
-
-        if (p.y > canvas.height) {
-            particles[i] = {
-                x: Math.random() * canvas.width,
-                y: 0,
-                r: p.r,
-                d: p.d,
-            };
-        }
-    }
+function initParticles(amount = 100) {
+  particles = [];
+  for (let i = 0; i < amount; i++) {
+    let size = Math.random() * 3 + 1;
+    let x = Math.random() * canvas.width;
+    let y = Math.random() * canvas.height;
+    let speedX = (Math.random() - 0.5) * 1.5;
+    let speedY = (Math.random() - 0.5) * 1.5;
+    particles.push(new Particle(x, y, size, speedX, speedY));
+  }
 }
 
-setInterval(draw, 33);
+function animate() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // efeito rastro
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
+});
+
+initParticles();
+animate();

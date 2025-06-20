@@ -11,6 +11,12 @@ canvas#background {
   left: 0;
   z-index: -2;
 }
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
 
 #stars {
   position: fixed;
@@ -118,6 +124,7 @@ h1 {
 
   .track {
     flex-direction: row;
+    cursor: default;
   }
 
   .track button {
