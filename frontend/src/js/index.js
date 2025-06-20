@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", (event) => {
 
   if (usuario === "admin" && senha === "admin") {
     alert("Login bem-sucedido!");
-    window.location.href = "./home.html";
+    window.location.href = "home.html";
   } else {
     alert("Usuário ou senha incorretos. Tente novamente.");
   }
