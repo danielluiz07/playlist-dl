@@ -30,7 +30,7 @@ Este é um projeto de página pessoal com animações em canvas, destinado para 
 
     -Os arquivos de áudios estão localizados em: frontend/src/audio/
 
-    -Imagem usada: frontend/src/img/
+    -Imagem usada caso queira mudar, estar em: frontend/src/img/
 
     -Substitua por seus próprios arquivos mantendo os mesmos nomes (ou altere-os no HTML)
 
