@@ -1,11 +1,12 @@
-document.getElementById("login-form").addEventListener("submit", (event) => {
-  event.preventDefault();
+document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
   const usuario = document.getElementById("username").value;
   const senha = document.getElementById("password").value;
 
   if (usuario === "admin" && senha === "admin") {
     alert("Login bem-sucedido!");
-    window.location.href = "home.html";
+    window.location.href = "home.html"; 
   } else {
     alert("Usuário ou senha incorretos. Tente novamente.");
   }
