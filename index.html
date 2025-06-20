@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Playlist</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+</head>
+
+<body>
+    <canvas id="background"></canvas>
+    <div id="stars"></div>
+    <main class="container">
+        <h1>🎧 Space Playlist do DL</h1>
+        <p>Feito por Daniel Luiz🚀</p>
+
+        <div class="playlist" id="playlist">
+            <!-- Músicas serão carregadas via JavaScript -->
+        </div>
+
+        <footer class="player">
+            <div id="now-playing">Nenhuma música tocando</div>
+            <button id="play-btn">▶️</button>
+            <button id="pause-btn">⏸️</button>
+            <audio id="audio-player"></audio>
+        </footer>
+    </main>
+
+    <script src="src/js/script.js"></script>
+</body>
+
+</html>
