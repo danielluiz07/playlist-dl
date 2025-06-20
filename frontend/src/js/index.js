@@ -6,7 +6,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 
   const usuarios = [
     { usuario: "admin", senha: "admin" },
-    { usuario: "artur", senha: "artu123" },
+    { usuario: "artur", senha: "artur123" },
     { usuario: "daniel", senha: "daniel123" },
   ];
 
