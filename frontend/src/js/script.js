@@ -6,7 +6,7 @@ document.getElementById("login-btn").addEventListener("click", () => {
   if (usuario === "admin" && senha === "admin") {
     alert("Login bem-sucedido!");
     // Redireciona após o alerta
-    window.location.href = "../../index.html";
+    window.location.href = "/frontend/src/pages/home.html";
   } else {
     alert("Usuário ou senha incorretos. Tente novamente.");
   }
