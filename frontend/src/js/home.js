@@ -1,15 +1,15 @@
 const playlist = [
   {
     title: "UM MERO SONHADOR APONTADO POR DEUS - MC Marks (SET WESLEY ALEMÃO 2)",
-    src: "/frontend/src/audio/um-mero-sonhador.mp3"
+    src: "/src/audio/um-mero-sonhador.mp3"
   },
   {
     title: "3 DIAS VIRADO - MC IG",
-    src: "/frontend/src/audio/3-dias-virado.mp3"
+    src: "/src/audio/3-dias-virado.mp3"
   },
   {
     title: "365 DIAS - MC'S Marks, Ryan SP, Jvila, Aaron Modesto, Magal, Bruno MS e Luuky",
-    src: "/frontend/src/audio/365-dias.mp3"
+    src: "/src/audio/365-dias.mp3"
   }
 ];
 
